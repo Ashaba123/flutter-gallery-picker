@@ -1,2 +1,2 @@
 # flutter-gallery-picker
-Using Flutter  package flutter_gallery_picker
+Building a gallery App
