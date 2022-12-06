@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gallery_picker/flutter_gallery_picker.dart';
 import 'package:gallery/my_gallery_screen.dart';
 
 void main() {
