@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gallery/utils.dart';
 import 'package:photo_manager/photo_manager.dart';
 
 class Gallery extends StatefulWidget {
@@ -31,6 +32,21 @@ class _GalleryState extends State<Gallery> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: whitecolor,
+          centerTitle: true,
+          title: const Text(
+            "Gallery",
+            style: TextStyle(color: blackcolor),
+          ),
+          iconTheme: const IconThemeData(color: blackcolor),
+        ),
+        body: Center(
+          // Modify this line as follows
+          child: Text('There are ${assets.length} assets'),
+        ));
+    ;
   }
 }
