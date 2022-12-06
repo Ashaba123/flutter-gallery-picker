@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gallery/asset_thumbnail.dart';
 import 'package:gallery/utils.dart';
 import 'package:photo_manager/photo_manager.dart';
 
@@ -33,20 +34,29 @@ class _GalleryState extends State<Gallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: whitecolor,
-          centerTitle: true,
-          title: const Text(
-            "Gallery",
-            style: TextStyle(color: blackcolor),
-          ),
-          iconTheme: const IconThemeData(color: blackcolor),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: whitecolor,
+        centerTitle: true,
+        title: const Text(
+          "Gallery",
+          style: TextStyle(color: blackcolor),
         ),
-        body: Center(
-          // Modify this line as follows
-          child: Text('There are ${assets.length} assets'),
-        ));
+        iconTheme: const IconThemeData(color: blackcolor),
+      ),
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          // A grid view with 3 items per row
+          crossAxisCount: 3,
+        ),
+        itemCount: assets.length,
+        itemBuilder: (_, index) {
+          return AssetThumbnail(
+            asset: assets[index],
+          );
+        },
+      ),
+    );
     ;
   }
 }
